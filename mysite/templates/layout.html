@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-		<title>{{path}} - iameeo</title>
+		<title>{{path}} | IAM.EEO</title>
 	
 		<!-- css -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,9 +19,9 @@
 				<ul>
 					<li><a href="{{url_for('Index')}}" {% if path == 'Index' %} class="active" {% endif %}>홈</a></li>
 					<li><a href="{{url_for('Intro')}}" {% if path == 'Intro' %} class="active" {% endif %}>소개</a></li>
-					<li><a href="{{url_for('Skill')}}" {% if path == 'Skill' %} class="active" {% endif %}>기술 스택</a></li>
-					<li><a href="{{url_for('Project')}}" {% if path == 'Project' %} class="active" {% endif %}>프로젝트 경험</a></li>
-					<li><a href="{{url_for('Certification')}}" {% if path == 'Certification' %} class="active" {% endif %}>교육 및 자격증</a></li>
+					<li><a href="{{url_for('Skill')}}" {% if path == 'Skill' %} class="active" {% endif %}>기술</a></li>
+					<li><a href="{{url_for('Project')}}" {% if path == 'Project' %} class="active" {% endif %}>프로젝트</a></li>
+					<li><a href="{{url_for('Certification')}}" {% if path == 'Certification' %} class="active" {% endif %}>자격증</a></li>
 					<li><a href="{{url_for('Contact')}}" {% if path == 'Contact' %} class="active" {% endif %}>연락처</a></li>
 				</ul>
 			</div>
@@ -31,7 +31,9 @@
 				{% endblock %}
 			</div>
 			<div class="footer">
-				footer
+				<div style="padding:10px 0px;">
+					footer https://winkberry.github.io/portfolio/ https://www.kakaocorp.com/
+				</div>
 			</div>
 		 </div>
     </body>
