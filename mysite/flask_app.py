@@ -37,7 +37,7 @@ def Contact():
     
 def slackMessage():
     text = 'jaeho'
-    url = "https://hooks.slack.com/services/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"
+    url = "https://hooks.slack.com/services/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"
     payload = { "text" : text }
 
     requests.post(url, json=payload)    
