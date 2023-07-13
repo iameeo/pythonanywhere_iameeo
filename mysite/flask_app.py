@@ -8,7 +8,6 @@ app = Flask(__name__)
 @app.route('/')
 def Index():
     path = 'Index'
-    slackMessage()
     return render_template('Index.html', path=path)
     
 @app.route('/Intro')
@@ -45,15 +44,15 @@ def slackMessage():
     url = url + '78IBMFJojDSDx6ON7wEXiOe7'
     payload = { "text" : text }
 
-    requests.post(url, json=payload)    
+    requests.post(url, json=payload)
 
 #@app.before_first_request
 #def before_first_request():
 #	print("앱 기동 후 첫번째 http 요청에 대한 응답")
 
-#@app.before_request
-#def before_request():
-#	print("http 요청이 처리되기 전에 실행")
+@app.before_request
+def before_request():
+	slackMessage()
 
 #@app.after_request
 #def after_request(response):		
