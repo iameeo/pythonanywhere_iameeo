@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
 import requests
+import time
 
 app = Flask(__name__)
 
@@ -34,10 +35,14 @@ def Certification():
 def Contact():
     path = 'Contact'
     return render_template('Contact.html', path=path)
+
+def current_milli_time():
+    return round(time.time() * 1000)
     
 def slackMessage():
-    text = 'jaeho'
-    url = "https://hooks.slack.com/services/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"
+    text = current_milli_time()
+    url = 'https://hooks.slack.com/services/TMGE25VGT/B05GZRKLRU1/'
+    url = url + '78IBMFJojDSDx6ON7wEXiOe7'
     payload = { "text" : text }
 
     requests.post(url, json=payload)    
