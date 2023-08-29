@@ -31,8 +31,16 @@
 				{% endblock %}
 			</div>
 			<div class="footer">
-				<div style="padding:10px 0px;">
-					footer https://winkberry.github.io/portfolio/ https://www.kakaocorp.com/
+				<h2><a href="{{url_for('Index')}}" {% if path == 'Index' %} class="active" {% endif %}>HOME</a></h2>
+				<p>
+					<a href="{{url_for('Intro')}}" {% if path == 'Intro' %} class="active" {% endif %}>INTRO</a>
+					<a href="{{url_for('Skill')}}" {% if path == 'Skill' %} class="active" {% endif %}>SKILL</a>
+					<a href="{{url_for('Project')}}" {% if path == 'Project' %} class="active" {% endif %}>PROJECT</a>
+					<a href="{{url_for('Certification')}}" {% if path == 'Certification' %} class="active" {% endif %}>CERTIFICATION</a>
+					<a href="{{url_for('Contact')}}" {% if path == 'Contact' %} class="active" {% endif %}>CONTACT</a>
+				</p>
+				<div>
+					Copyright ©2023 All rights reserved
 				</div>
 			</div>
 		 </div>

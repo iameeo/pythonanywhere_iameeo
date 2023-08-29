@@ -50,9 +50,9 @@ def slackMessage():
 #def before_first_request():
 #	print("앱 기동 후 첫번째 http 요청에 대한 응답")
 
-@app.before_request
-def before_request():
-	slackMessage()
+#@app.before_request
+#def before_request():
+	#slackMessage()
 
 #@app.after_request
 #def after_request(response):		
