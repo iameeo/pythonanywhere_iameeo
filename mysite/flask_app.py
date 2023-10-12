@@ -1,9 +1,14 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template, redirect, url_for, request
 import requests
+import pymysql
 import time
 
 app = Flask(__name__)
+
+def connectsql():
+    conn = pymysql.connect(host='localhost', user = 'root', passwd = 'wndnjsWkd!2', db = 'userlist', charset='utf8')
+    return conn
 
 @app.route('/')
 def Index():
@@ -29,17 +34,37 @@ def Project():
 def Certification():
     path = 'Certification'
     return render_template('Certification.html', path=path)
-    
-@app.route('/Contact')
+
+#연락처 GET
+@app.route('/Contact', methods=['GET'])
 def Contact():
     path = 'Contact'
     return render_template('Contact.html', path=path)
 
+#연락처 POST
+@app.route('/Contact', methods=['POST'])
+def Contact_Post():
+    username = request.form['name']
+    usertitle = request.form['title']
+    usercontent = request.form['content']
+
+    conn = connectsql()
+    cursor = conn.cursor() 
+    query = "INSERT INTO board (name, title, content, regdate) values (%s, %s, %s, now())"
+    value = (username, usertitle, usercontent)
+    cursor.execute(query, value)
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+    slackMessage(username + "- " + usertitle)
+
+    return redirect(url_for('Contact'))
+
 def current_milli_time():
     return round(time.time() * 1000)
     
-def slackMessage():
-    text = current_milli_time()
+def slackMessage(text):
     url = 'https://hooks.slack.com/services/TMGE25VGT/B05GZRKLRU1/'
     url = url + '78IBMFJojDSDx6ON7wEXiOe7'
     payload = { "text" : text }
