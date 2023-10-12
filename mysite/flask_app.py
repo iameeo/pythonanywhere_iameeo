@@ -7,7 +7,7 @@ import time
 app = Flask(__name__)
 
 def connectsql():
-    conn = pymysql.connect(host='localhost', user = 'root', passwd = 'wndnjsWkd!2', db = 'userlist', charset='utf8')
+    conn = pymysql.connect(host='iameeo.mysql.pythonanywhere-services.com', user = 'iameeo', passwd = 'wndnjsWkd!2', db = 'userlist', charset='utf8')
     return conn
 
 @app.route('/')
