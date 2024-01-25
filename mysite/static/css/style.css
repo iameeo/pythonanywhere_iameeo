@@ -58,6 +58,9 @@ iframe{border:0;}
 .bold{font-weight:bold;}
 
 .contents{width:1024px;margin:0 auto;}
+
+.contents > .main > p {text-align: center;padding:300px 0px;font-size:30px;}
+
 .contents > .intro > h1 {font-size:20px;padding: 15px 0px;}
 .contents > .intro > .story > p {font-size:14px;padding:5px 0px;}
 
