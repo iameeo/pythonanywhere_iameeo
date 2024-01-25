@@ -61,6 +61,14 @@ iframe{border:0;}
 .contents > .intro > h1 {font-size:20px;padding: 15px 0px;}
 .contents > .intro > .story > p {font-size:14px;padding:5px 0px;}
 
+.contents > .project > h1 {font-size:20px;padding: 15px 0px;}
+.contents > .project > div{    width: 460px;
+    margin: 0 auto;}
+.contents > .project > div > ul {/*overflow: hidden;*/}
+.contents > .project > div > ul > li {/*float:left;*/padding:30px;}
+.contents > .project > div > ul > li > .group > p {font-size:14px;font-weight: bold;}
+.contents > .project > div > ul > li > .group > ul > li {padding:0px 15px;font-size:15px;}
+
 .nav{padding:20px 0px;font-size:16px;background-color:#fff;}
 .nav > ul{overflow:hidden;width:341px;margin:0 auto;}
 .nav > ul > li{float:left;padding:10px;}
