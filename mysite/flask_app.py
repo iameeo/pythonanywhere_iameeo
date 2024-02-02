@@ -81,7 +81,8 @@ def slackMessage(text):
 
 @app.before_request
 def before_request():
-	slackMessage("site in")
+    if request.host_url.find('localhost') == -1 :
+        slackMessage("site in")
 
 #@app.after_request
 #def after_request(response):		
